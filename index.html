@@ -58,9 +58,18 @@
         /* --- Header Section --- */
         .header {
             text-align: center;
-            border-bottom: 2px solid var(--secondary-glow);
             padding-bottom: 1.5rem;
             margin-bottom: 2rem;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-glow);
+            box-shadow: 0 0 15px var(--primary-glow);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
         }
 
         .header h1 {
@@ -71,7 +80,7 @@
             letter-spacing: 3px;
             animation: glitch 1s linear infinite;
         }
-
+        
         .header .subtitle {
             font-size: clamp(1rem, 3vw, 1.2rem);
             color: var(--primary-glow);
@@ -82,7 +91,7 @@
             content: '>';
             margin-right: 0.5rem;
         }
-
+        
         /* --- Section Styling --- */
         .section {
             margin-bottom: 2.5rem;
@@ -119,140 +128,32 @@
             box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
             border-color: var(--primary-glow);
         }
-        .project-card h3 {
-            margin: 0 0 0.5rem 0;
-            color: #fff;
-            font-family: var(--header-font);
-            font-size: 1.2rem;
-        }
-        .project-card .role {
-            color: var(--secondary-glow);
-            font-weight: bold;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        .project-card p {
-            flex-grow: 1;
-        }
-        .project-card .specs {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .project-card .specs strong {
-            color: var(--primary-glow);
-        }
-
-        /* --- Skills Styling --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        .skills-grid ul {
-            list-style-type: '» ';
-            padding-left: 1.2rem;
-            margin: 0;
-            line-height: 1.8;
-        }
-        .skills-grid h4 {
-            color: var(--secondary-glow);
-            margin-bottom: 0.5rem;
-        }
+        .project-card h3 { margin: 0 0 0.5rem 0; color: #fff; font-family: var(--header-font); font-size: 1.2rem; }
+        .project-card .role { color: var(--secondary-glow); font-weight: bold; margin-bottom: 1rem; font-size: 0.9rem; }
+        .project-card p.desc { flex-grow: 1; }
+        .project-card .specs { margin-top: 1rem; font-size: 0.9rem; }
+        .project-card .specs strong { color: var(--primary-glow); }
 
         /* --- Gemini API Feature Styling --- */
-        .gemini-btn {
-            background-color: transparent;
-            border: 1px solid var(--secondary-glow);
-            color: var(--secondary-glow);
-            font-family: var(--body-font);
-            padding: 0.5rem 1rem;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-        .gemini-btn:hover {
-            background-color: var(--secondary-glow);
-            color: var(--bg-color);
-            box-shadow: 0 0 10px var(--secondary-glow);
-        }
+        .gemini-btn { background-color: transparent; border: 1px solid var(--secondary-glow); color: var(--secondary-glow); font-family: var(--body-font); padding: 0.5rem 1rem; margin-top: 1.5rem; cursor: pointer; transition: all 0.3s ease; font-weight: bold; }
+        .gemini-btn:hover { background-color: var(--secondary-glow); color: var(--bg-color); box-shadow: 0 0 10px var(--secondary-glow); }
 
         /* Modal styling */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 20, 0.8);
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 1rem;
-        }
-        .modal-content {
-            background: var(--bg-color);
-            border: 1px solid var(--primary-glow);
-            box-shadow: 0 0 25px var(--primary-glow);
-            padding: 2rem;
-            max-width: 600px;
-            width: 100%;
-            position: relative;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        .modal-close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--text-color);
-            cursor: pointer;
-        }
-        .modal-title {
-            font-family: var(--header-font);
-            color: var(--primary-glow);
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 20, 0.8); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 1rem; }
+        .modal-content { background: var(--bg-color); border: 1px solid var(--primary-glow); box-shadow: 0 0 25px var(--primary-glow); padding: 2rem; max-width: 600px; width: 100%; position: relative; max-height: 80vh; overflow-y: auto; }
+        .modal-close-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 2rem; color: var(--text-color); cursor: pointer; }
+        .modal-title { font-family: var(--header-font); color: var(--primary-glow); text-align: center; margin-bottom: 1.5rem; }
         #modal-response-content h4 { color: var(--secondary-glow); margin-top: 1.5rem; }
         #modal-response-content p { line-height: 1.6; }
 
         /* Loader */
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--border-color);
-            border-top-color: var(--primary-glow);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        .loader { width: 50px; height: 50px; border: 5px solid var(--border-color); border-top-color: var(--primary-glow); border-radius: 50%; animation: spin 1s linear infinite; margin: 2rem auto; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         /* --- Footer Styling --- */
-        .footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--secondary-glow);
-        }
-        .footer a {
-            color: var(--primary-glow);
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            transition: text-shadow 0.3s ease;
-        }
-        .footer a:hover {
-            text-shadow: 0 0 5px var(--primary-glow);
-        }
+        .footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--secondary-glow); }
+        .footer a { color: var(--primary-glow); text-decoration: none; margin: 0 1rem; font-size: 1.1rem; transition: text-shadow 0.3s ease; }
+        .footer a:hover { text-shadow: 0 0 5px var(--primary-glow); }
     </style>
 </head>
 <body>
@@ -260,98 +161,51 @@
     <div class="container">
         <!-- Main Header -->
         <header class="header">
-            <h1>IHZAM CHAIDIR ALDY</h1>
+            <!-- ===== BAGIAN FOTO PROFIL BARU ===== -->
+            <!-- Ganti 'NAMA_FILE_FOTO_ANDA.jpg' dengan nama file foto Anda setelah diunggah -->
+            <img class="profile-photo" src="profile.jpg" alt="Foto Profil Ihzam Chaidir Aldy">
+            
+            <h1 style="border-top: 2px solid var(--secondary-glow); padding-top: 1.5rem;">IHZAM CHAIDIR ALDY</h1>
             <p class="subtitle">Game Programmer // Unity Developer // VR-AR Architect</p>
         </header>
 
         <main>
-            <!-- About Section -->
+            <!-- Sections (About, Skills, Projects) remain the same -->
             <section class="section">
                 <h2 class="section-title">STATUS_REPORT</h2>
                 <p>Game Programmer dengan pengalaman 3+ tahun dalam merancang dan mengeksekusi mekanik game tingkat lanjut. Menguasai OOP, version control via GitHub, serta proses testing dan bug fixing. Mahir dalam berbagai tumpukan teknologi termasuk Unity, MySQL, dan pengembangan AR/VR. Mampu beroperasi secara mandiri maupun berkolaborasi dalam tim untuk mencapai target proyek.</p>
             </section>
-
-            <!-- Skills Section -->
             <section class="section">
                 <h2 class="section-title">CORE_MATRIX [SKILLS]</h2>
                 <div class="skills-grid">
-                    <div>
-                        <h4>PROGRAMMING & ENGINES</h4>
-                        <ul>
-                            <li>Unity Engine</li>
-                            <li>Game Programming (C#)</li>
-                            <li>AR/VR Development</li>
-                            <li>HTML / CSS / PHP</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>DATABASE & TOOLS</h4>
-                        <ul>
-                            <li>MySQL</li>
-                            <li>GitHub</li>
-                            <li>Visual Studio</li>
-                            <li>Microsoft Office Suite</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>CREATIVE & DESIGN</h4>
-                        <ul>
-                            <li>Game UI Implementation</li>
-                            <li>Photo & Video Editing</li>
-                            <li>Illustration</li>
-                            <li>Sound Engineering</li>
-                        </ul>
-                    </div>
+                    <div> <h4>PROGRAMMING & ENGINES</h4> <ul> <li>Unity Engine</li> <li>Game Programming (C#)</li> <li>AR/VR Development</li> <li>HTML / CSS / PHP</li> </ul> </div>
+                    <div> <h4>DATABASE & TOOLS</h4> <ul> <li>MySQL</li> <li>GitHub</li> <li>Visual Studio</li> <li>Microsoft Office Suite</li> </ul> </div>
+                    <div> <h4>CREATIVE & DESIGN</h4> <ul> <li>Game UI Implementation</li> <li>Photo & Video Editing</li> <li>Illustration</li> <li>Sound Engineering</li> </ul> </div>
                 </div>
             </section>
-
-            <!-- Projects Section -->
             <section class="section">
                 <h2 class="section-title">PROJECT_LOGS</h2>
                 <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Pari Harvest [Virtual Reality]</h3>
-                        <p class="role">Game Programmer</p>
-                        <p class="desc">Game simulasi pertanian berbasis Virtual Reality. Mengimplementasikan mekanik interaksi VR menggunakan Oculus Rift S untuk pengalaman yang imersif.</p>
-                        <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, Oculus SDK</p>
-                        <button class="gemini-btn">✨ Hasilkan Ide Serupa</button>
-                    </div>
-                    <div class="project-card">
-                        <h3>TUMBAL [Multiplayer]</h3>
-                        <p class="role">Game Programmer & Networking</p>
-                        <p class="desc">Game horor multiplayer real-time untuk 3-5 pemain. Membangun koneksi client-server menggunakan Photon Engine.</p>
-                        <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, Photon Engine</p>
-                        <button class="gemini-btn">✨ Hasilkan Ide Serupa</button>
-                    </div>
-                    <div class="project-card">
-                        <h3>Keep Breathing [PC]</h3>
-                        <p class="role">Game Programmer & Sound Engineer</p>
-                        <p class="desc">Game survival 3D dengan fokus pada atmosfer mencekam. Bertanggung jawab atas implementasi audio visual untuk membangun suasana.</p>
-                        <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, FMOD</p>
-                        <button class="gemini-btn">✨ Hasilkan Ide Serupa</button>
-                    </div>
+                    <div class="project-card"> <h3>Pari Harvest [Virtual Reality]</h3> <p class="role">Game Programmer</p> <p class="desc">Game simulasi pertanian berbasis Virtual Reality. Mengimplementasikan mekanik interaksi VR menggunakan Oculus Rift S untuk pengalaman yang imersif.</p> <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, Oculus SDK</p> <button class="gemini-btn">✨ Hasilkan Ide Serupa</button> </div>
+                    <div class="project-card"> <h3>TUMBAL [Multiplayer]</h3> <p class="role">Game Programmer & Networking</p> <p class="desc">Game horor multiplayer real-time untuk 3-5 pemain. Membangun koneksi client-server menggunakan Photon Engine.</p> <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, Photon Engine</p> <button class="gemini-btn">✨ Hasilkan Ide Serupa</button> </div>
+                    <div class="project-card"> <h3>Keep Breathing [PC]</h3> <p class="role">Game Programmer & Sound Engineer</p> <p class="desc">Game survival 3D dengan fokus pada atmosfer mencekam. Bertanggung jawab atas implementasi audio visual untuk membangun suasana.</p> <p class="specs"><strong>&gt; SPECS:</strong> Unity, C#, FMOD</p> <button class="gemini-btn">✨ Hasilkan Ide Serupa</button> </div>
                 </div>
             </section>
         </main>
-
+        
         <!-- Footer / Contact -->
         <footer class="footer">
             <h2 class="section-title">CONNECTION_NODE</h2>
-             <p>
-                <a href="mailto:ihzam.aldy27@gmail.com">EMAIL</a> | 
-                <a href="https://www.linkedin.com/in/ihzam-chaidir-aldy-007aa4113/" target="_blank">LINKEDIN</a> | 
-                <a href="https://github.com/ihzamaldy27" target="_blank">GITHUB</a> | 
-                <a href="https://ihzamaldy-27.itch.io/" target="_blank">ITCH.IO</a>
-             </p>
+             <p> <a href="mailto:ihzam.aldy27@gmail.com">EMAIL</a> | <a href="https://www.linkedin.com/in/ihzam-chaidir-aldy-007aa4113/" target="_blank">LINKEDIN</a> | <a href="https://github.com/ihzamaldy27" target="_blank">GITHUB</a> | <a href="https://ihzamaldy-27.itch.io/" target="_blank">ITCH.IO</a> </p>
         </footer>
     </div>
 
     <!-- Gemini Modal -->
-    <div id="gemini-modal" class="modal-overlay" style="display: none;">
+    <div id="gemini-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close-btn">&times;</button>
             <h2 class="modal-title">✨ Konsep Game Dihasilkan oleh AI</h2>
-            <div id="modal-loader" class="loader" style="display: none;"></div>
+            <div id="modal-loader" class="loader"></div>
             <div id="modal-response-content"></div>
         </div>
     </div>
@@ -364,18 +218,14 @@
             const closeModalBtn = modal.querySelector('.modal-close-btn');
             const geminiButtons = document.querySelectorAll('.gemini-btn');
 
-            // Function to open modal
             const openModal = () => {
                 modal.style.display = 'flex';
                 modalLoader.style.display = 'block';
                 modalResponseContent.innerHTML = '';
             };
-
-            // Function to close modal
             const closeModal = () => {
                 modal.style.display = 'none';
             };
-
             closeModalBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
@@ -391,44 +241,27 @@
                     const specs = card.querySelector('.specs').textContent;
 
                     openModal();
-
                     const prompt = `Based on the following Indonesian game project, generate 3 new, creative game concepts that build upon similar mechanics or themes. The target audience is Indonesian gamers. For each concept, provide a title, a short description (in Indonesian), and the suggested core technologies.
-                    
                     Here is the project detail:
                     - Title: "${title}"
                     - Description: "${description}"
                     - Technologies: "${specs}"
-
                     Please format the response in simple HTML. Use <h4> for the title of each concept and <p> for the description and technologies. For example: <h4>Judul Konsep 1</h4><p>Deskripsi...</p><p><strong>Teknologi:</strong> ...</p>`;
 
                     try {
                         let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                         const payload = { contents: chatHistory };
-                        const apiKey = ""; // API key will be provided by the environment
+                        const apiKey = "";
                         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                        
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-
+                        const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                        if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
                         const result = await response.json();
-                        
                         let text = 'Maaf, terjadi kesalahan saat menghasilkan ide.';
-                        if (result.candidates && result.candidates.length > 0 &&
-                            result.candidates[0].content && result.candidates[0].content.parts &&
-                            result.candidates[0].content.parts.length > 0) {
+                        if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
                             text = result.candidates[0].content.parts[0].text;
                         }
-
                         modalLoader.style.display = 'none';
                         modalResponseContent.innerHTML = text;
-
                     } catch (error) {
                         console.error('Error fetching Gemini API:', error);
                         modalLoader.style.display = 'none';
