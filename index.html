@@ -1,127 +1,234 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | MyPortofolio</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Ihzam Chaidir Aldy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .section {
+            display: none;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        .section.active {
+            display: block;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Halaman Utama (Home) -->
+    <div id="home" class="section active p-8 md:p-12">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <!-- Header -->
+            <div class="w-full flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8 mb-12">
+                <div class="flex items-center space-x-4">
+                    <img src="https://placehold.co/120x120/4B2C20/FFFFFF?text=IHZAM" alt="Foto Profil" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover border-4 border-[#3e2723]">
+                    <div class="text-left">
+                        <h1 class="text-3xl md:text-5xl font-bold">IHZAM CHAIDIR ALDY</h1>
+                        <p class="text-xl md:text-2xl text-[#8b5e3c] font-medium">Game Programmer & Aspiring Developer</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right space-y-1">
+                    <p class="text-sm">ihzam.aldy27@gmail.com</p>
+                    <a href="#" class="text-sm hover:underline">LinkedIn</a>
+                    <a href="#" class="text-sm hover:underline">GitHub</a>
+                    <a href="#" class="text-sm hover:underline">Itch.io</a>
+                </div>
+            </div>
+            
+            <hr class="w-full border-t-2 border-[#8b5e3c] my-8">
+
+            <!-- Tentang & Motivasi -->
+            <div class="w-full text-left mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#3e2723]">Tentang & Motivasi</h2>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Sebagai seorang game programmer dengan pengalaman lebih dari tiga tahun, saya bersemangat dalam menciptakan pengalaman digital yang interaktif dan menarik. Perjalanan saya telah membawa saya dari membangun game multiplayer dan simulasi VR hingga berkolaborasi dalam aplikasi dunia nyata. Saya didorong oleh keinginan untuk belajar, memecahkan masalah yang kompleks, dan mengeksplorasi bagaimana teknologi dapat menghubungkan orang. Saya sangat ingin bergabung dengan Apple Developer Academy untuk memperdalam keterampilan saya dalam ekosistem Apple, berkolaborasi dengan beragam pemikiran, dan berkontribusi untuk menciptakan solusi inovatif dan berdampak.
+                </p>
+            </div>
+
+            <!-- Bagian Proyek -->
+            <div class="w-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-[#3e2723]">Proyek Terpilih</h2>
+                <div class="grid-container">
+                    <div class="project-card cursor-pointer" data-target="tumbal">
+                        <img src="https://placehold.co/500x300/1C1C1C/FFFFFF?text=Tumbal" alt="Tumbal Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                    </div>
+                    <div class="project-card cursor-pointer" data-target="pari-harvest">
+                        <img src="https://placehold.co/500x300/d1b19e/FFFFFF?text=Pari+Harvest" alt="Pari Harvest Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                    </div>
+                    <div class="project-card cursor-pointer" data-target="keep-breathing">
+                        <img src="https://placehold.co/500x300/4B4B4B/FFFFFF?text=Keep+Breathing" alt="Keep Breathing Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                    </div>
+                    <div class="project-card cursor-pointer" data-target="tales-of-rama">
+                        <img src="https://placehold.co/500x300/b19a79/FFFFFF?text=Tales+of+Rama" alt="Tales of Rama Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">MyPortofolio</div>
-      </div>
     </div>
+
+    <!-- Halaman Detail Proyek (Tumbal) -->
+    <div id="tumbal" class="section p-8 md:p-12 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
+            <h1 class="text-4xl font-bold mb-4">TUMBAL (Multiplayer Horror Game)</h1>
+            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <img src="https://placehold.co/600x600/1c1c1c/FFFFFF?text=TUMBAL+Cover" alt="Tumbal Game Cover" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Sebuah game horor multipemain real-time di mana para pemain harus berkolaborasi untuk bertahan hidup melawan hantu.
+                    </p>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Peran & Dampak Saya:</h3>
+                        <p class="text-gray-700">
+                            Sebagai Game Programmer & spesialis Jaringan, saya mengimplementasikan arsitektur klien-server menggunakan Photon Engine. Pekerjaan saya memungkinkan interaksi real-time yang lancar antar pemain, yang sangat penting untuk pengalaman bermain yang kooperatif.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Apa yang Saya Pelajari:</h3>
+                        <p class="text-gray-700">
+                            Proyek ini memperdalam pemahaman saya tentang tantangan sinkronisasi jaringan dalam game real-time dan mengajari saya cara mengelola status game di berbagai klien secara efektif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Detail Proyek (Pari Harvest) -->
+    <div id="pari-harvest" class="section p-8 md:p-12 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
+            <h1 class="text-4xl font-bold mb-4">Pari Harvest (Virtual Reality)</h1>
+            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <img src="https://placehold.co/600x600/d1b19e/FFFFFF?text=Pari+Harvest+Cover" alt="Pari Harvest Cover" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Sebuah game simulasi pertanian yang dikembangkan untuk Virtual Reality, memungkinkan pemain untuk mengalami menanam dan memanen tanaman secara imersif.
+                    </p>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Peran & Dampak Saya:</h3>
+                        <p class="text-gray-700">
+                            Sebagai Game Programmer, saya berfokus pada implementasi mekanik VR inti menggunakan Oculus Rift S SDK. Saya mengembangkan sistem untuk pergerakan pemain, interaksi alat, dan panen, menciptakan pengalaman VR yang intuitif dan menarik.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Apa yang Saya Pelajari:</h3>
+                        <p class="text-gray-700">
+                            Saya mempelajari dasar-dasar pengembangan VR, termasuk mengoptimalkan kinerja dan merancang interaksi pengguna yang nyaman dan meminimalkan mabuk gerak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Detail Proyek (Keep Breathing) -->
+    <div id="keep-breathing" class="section p-8 md:p-12 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
+            <h1 class="text-4xl font-bold mb-4">Keep Breathing (PC)</h1>
+            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <img src="https://placehold.co/600x600/4B4B4B/FFFFFF?text=Keep+Breathing+Cover" alt="Keep Breathing Cover" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Sebuah game survival 3D di mana pemain harus mengelola sumber daya dan menavigasi lingkungan yang tidak ramah.
+                    </p>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Peran & Dampak Saya:</h3>
+                        <p class="text-gray-700">
+                            Saya memiliki peran ganda sebagai Game Programmer dan Sound Engineer. Saya mengimplementasikan mekanik survival dan juga merancang serta mengintegrasikan efek suara game dan audio ambien, yang sangat penting dalam menciptakan suasana tegang dan imersif.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Apa yang Saya Pelajari:</h3>
+                        <p class="text-gray-700">
+                            Proyek ini menunjukkan kepada saya kekuatan kerja interdisipliner. Menyeimbangkan koding dengan desain suara mengajari saya bagaimana elemen teknis dan kreatif harus bekerja sama untuk menciptakan pengalaman pemain yang kohesif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Detail Proyek (Tales of Rama) -->
+    <div id="tales-of-rama" class="section p-8 md:p-12 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
+            <h1 class="text-4xl font-bold mb-4">Tales of Rama (Digital Card Game)</h1>
+            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <img src="https://placehold.co/600x600/b19a79/FFFFFF?text=Tales+of+Rama+Cover" alt="Tales of Rama Cover" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Sebuah game kartu digital untuk PC yang terinspirasi oleh karakter dan cerita dari epos Ramayana.
+                    </p>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Peran & Dampak Saya:</h3>
+                        <p class="text-gray-700">
+                            Sebagai Lead Game Programmer, saya merancang arsitektur game dan sistem kartu menggunakan ScriptableObjects. Ini membuat basis data kartu sangat skalabel dan mudah dimodifikasi oleh desainer kami, secara signifikan mempercepat alur kerja kami.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Apa yang Saya Pelajari:</h3>
+                        <p class="text-gray-700">
+                            Proyek ini menunjukkan kepada saya kekuatan kerja interdisipliner. Menyeimbangkan koding dengan desain suara mengajari saya bagaimana elemen teknis dan kreatif harus bekerja sama untuk menciptakan pengalaman pemain yang kohesif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk Navigasi -->
     <script>
-      var canvas = document.querySelector("#unity-canvas");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0, 0); // Gulir ke atas halaman
         }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/PortofolioWeb.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/PortofolioWeb.data",
-        frameworkUrl: buildUrl + "/PortofolioWeb.framework.js",
-        codeUrl: buildUrl + "/PortofolioWeb.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "MyPortofolio",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
-
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      document.querySelector("#unity-loading-bar").style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const targetId = card.dataset.target;
+                    showSection(targetId);
+                });
+            });
+        });
     </script>
-  </body>
+
+</body>
 </html>
