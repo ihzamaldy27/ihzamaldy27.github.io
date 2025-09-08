@@ -10,8 +10,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(-45deg, #f0f0f0, #e0eafc, #b6d3e8, #f0f0f0);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
         }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .section {
             display: none;
             padding: 2rem 1rem;
@@ -30,9 +39,16 @@
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="text-gray-800">
 
     <!-- Halaman Utama (Home) -->
     <div id="home" class="section active p-8 md:p-12">
@@ -69,16 +85,16 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-[#3e2723]">Proyek Terpilih</h2>
                 <div class="grid-container">
                     <div class="project-card cursor-pointer" data-target="tumbal">
-                        <img src="https://placehold.co/500x300/1C1C1C/FFFFFF?text=Tumbal" alt="Tumbal Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                        <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173516.png" alt="Gambar Tumbal" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </div>
                     <div class="project-card cursor-pointer" data-target="pari-harvest">
-                        <img src="https://placehold.co/500x300/d1b19e/FFFFFF?text=Pari+Harvest" alt="Pari Harvest Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                        <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173549.png" alt="Gambar Pari Harvest" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </div>
                     <div class="project-card cursor-pointer" data-target="keep-breathing">
-                        <img src="https://placehold.co/500x300/4B4B4B/FFFFFF?text=Keep+Breathing" alt="Keep Breathing Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                        <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173620.png" alt="Gambar Keep Breathing" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </div>
                     <div class="project-card cursor-pointer" data-target="tales-of-rama">
-                        <img src="https://placehold.co/500x300/b19a79/FFFFFF?text=Tales+of+Rama" alt="Tales of Rama Project" class="rounded-lg shadow-md hover:shadow-xl transition-shadow w-full h-auto object-cover">
+                        <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173656.png" alt="Gambar Tales of Rama" class="rounded-lg shadow-md w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
@@ -89,13 +105,13 @@
     <div id="tumbal" class="section p-8 md:p-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
-            <h1 class="text-4xl font-bold mb-4">TUMBAL (Multiplayer Horror Game)</h1>
-            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                    <img src="https://placehold.co/600x600/1c1c1c/FFFFFF?text=TUMBAL+Cover" alt="Tumbal Game Cover" class="rounded-xl shadow-lg w-full">
+                    <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173516.png" alt="Gambar Tumbal" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div class="space-y-6">
+                    <h1 class="text-4xl font-bold mb-1">TUMBAL (Multiplayer Horror Game)</h1>
+                    <p class="text-gray-500 mb-4">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
                     <p class="text-lg leading-relaxed text-gray-700">
                         Sebuah game horor multipemain real-time di mana para pemain harus berkolaborasi untuk bertahan hidup melawan hantu.
                     </p>
@@ -120,13 +136,13 @@
     <div id="pari-harvest" class="section p-8 md:p-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
-            <h1 class="text-4xl font-bold mb-4">Pari Harvest (Virtual Reality)</h1>
-            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                    <img src="https://placehold.co/600x600/d1b19e/FFFFFF?text=Pari+Harvest+Cover" alt="Pari Harvest Cover" class="rounded-xl shadow-lg w-full">
+                    <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173549.png" alt="Gambar Pari Harvest" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div class="space-y-6">
+                    <h1 class="text-4xl font-bold mb-1">Pari Harvest (Virtual Reality)</h1>
+                    <p class="text-gray-500 mb-4">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
                     <p class="text-lg leading-relaxed text-gray-700">
                         Sebuah game simulasi pertanian yang dikembangkan untuk Virtual Reality, memungkinkan pemain untuk mengalami menanam dan memanen tanaman secara imersif.
                     </p>
@@ -151,13 +167,13 @@
     <div id="keep-breathing" class="section p-8 md:p-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
-            <h1 class="text-4xl font-bold mb-4">Keep Breathing (PC)</h1>
-            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                    <img src="https://placehold.co/600x600/4B4B4B/FFFFFF?text=Keep+Breathing+Cover" alt="Keep Breathing Cover" class="rounded-xl shadow-lg w-full">
+                    <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173620.png" alt="Gambar Keep Breathing" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div class="space-y-6">
+                    <h1 class="text-4xl font-bold mb-1">Keep Breathing (PC)</h1>
+                    <p class="text-gray-500 mb-4">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
                     <p class="text-lg leading-relaxed text-gray-700">
                         Sebuah game survival 3D di mana pemain harus mengelola sumber daya dan menavigasi lingkungan yang tidak ramah.
                     </p>
@@ -182,13 +198,13 @@
     <div id="tales-of-rama" class="section p-8 md:p-12 bg-white">
         <div class="max-w-4xl mx-auto">
             <button class="mb-8 text-gray-600 hover:text-[#3e2723] transition-colors" onclick="showSection('home')">&larr; Kembali ke Beranda</button>
-            <h1 class="text-4xl font-bold mb-4">Tales of Rama (Digital Card Game)</h1>
-            <p class="text-gray-500 mb-8">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                    <img src="https://placehold.co/600x600/b19a79/FFFFFF?text=Tales+of+Rama+Cover" alt="Tales of Rama Cover" class="rounded-xl shadow-lg w-full">
+                    <img src="https://storage.googleapis.com/gweb-uniblog-assets/Pasted%20image%2020240908173656.png" alt="Gambar Tales of Rama" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div class="space-y-6">
+                    <h1 class="text-4xl font-bold mb-1">Tales of Rama (Digital Card Game)</h1>
+                    <p class="text-gray-500 mb-4">Tipe Proyek: Tugas Kelompok (Tugas Kuliah)</p>
                     <p class="text-lg leading-relaxed text-gray-700">
                         Sebuah game kartu digital untuk PC yang terinspirasi oleh karakter dan cerita dari epos Ramayana.
                     </p>
